@@ -72,23 +72,114 @@ python -m ipykernel install --user --name ml-learning-book --display-name "Pytho
 - A `.gitignore` is included to ignore virtual environments, notebook checkpoints, Python cache files, and editor/temp files.
 
 ## Chapter-wise Notes
+		- Here chapter wise Notes which are typed by me forgive typos 😓
 
 ### Chapter 1
-- Notes:
-- 1.Types of Machine Learning -> supervised learning , unsupervised learning , semi-supervised , online vs batch etc.
-  - Supervised/Unsupervised Learning
-    - 1.It is based on the supervisions they get during training four major categories
-      - A.supervised
-        - training set is provided with the desired outcome called `labels`
-        - typical example would be classification (spam or not spam)
-        - another example would be prediction of numeric values these are called predictors this sort of task is called `regression`
-        - Note regression can be used as classification vice-versa.
-        - Algorithms: k-Nearest Neighbors , Linear Regression, Logistic Regression , Support Vector Machines (SVMs), Decision Trees and Random Forests , Neural networks
-      - B.unsupervised
-        - traning set is not provided that is it is unlabeled the system lerns without teacher like us 😮‍💨
-        - Algorithms : k-means , DBSCAN , HCA , one-class SVM , Ioslation Forest , PCA, Kernal PCA , Locally Linear Embedding (LLE) , t-Distributed Stochastic Neighbor Embedding (t-SNE), Apriori , Eclat
-        - typical example would be to detect similar type of user in your website , visualization algos
-        - A dimensity reduction algorithm which is more important here as it is necessary step also unsupervised
-      - C.semi-supervised
-      - D.Reinforcement
-        
+
+- #### Notes:
+		Machine Learning is the field of study that gives computers the ability to learn without being explicitly programmed.
+
+-  #### Types/Categorization of Machine Learning
+		Following are the types of Machine leraning in broader specs
+
+	- ##### Supervised/Unsupervised Learning
+
+			- It is based on the supervisions they get during training four major categories
+
+			- A.supervised
+				- training set is provided with the desired outcome called `labels`
+				- typical example would be classification (spam or not spam)
+				- another example would be prediction of numeric values these are called predictors this sort of task is called `regression`
+				- Note regression can be used as classification vice-versa.
+				- Algorithms: k-Nearest Neighbors , Linear Regression, Logistic Regression , Support Vector Machines (SVMs), Decision Trees and Random Forests , Neural networks
+
+			- B.unsupervised
+				- traning set is not provided that is it is unlabeled the system lerns without teacher like us 😮‍💨
+				- Algorithms : k-means , DBSCAN , HCA , one-class SVM , Ioslation Forest , PCA, Kernal PCA , Locally Linear Embedding (LLE) , t-Distributed Stochastic Neighbor Embedding (t-SNE), Apriori , Eclat
+				- typical example would be to detect similar type of user in your website , visualization algos
+				- A dimensity reduction algorithm which is more important here as it is necessary step also unsupervised
+
+			- C.semi-supervised
+				- Mixture of labelled and ulabelled data mostly time contraint or data availability so combination of supervised and unsupervised 
+				- Examples like photo hosting services like google photo 
+				- Most algo's are combination of supervised and unsupervised e.g deep belief networks (DBNs) are based on unsu‐pervised components called restricted Boltzmann machines (RBMs) stacked on top of one another. RBMs are trained sequentially in an unsupervised manner, and then the whole system is fine-tuned using supervised learning techniques
+
+			- D.Reinforcement
+				- Learning system called as agent in context,  it different ball game from other types it observe in the environment performs actions gets rewards it lerns by itself the best startegy called `policy` in short this policy defines what actions should choose in the given situation.
+				- Example Many robots lerant walk by this algo 
+		
+
+	- ##### Batch and Online Learning
+
+			- Another critria used to classify ML Systems whether system can learn incremently or not based on that following types are there 
+
+			-A.batch/offline learning 
+				- System is incapble of incremental leraning so it must be trained all available data this is called offline leraning 
+				- Any new data or new feature for that it is needed to train from scratch from old to new 
+				- This might take longer time to train as well as heavy computings better option is to use those are capable of incremental learning 
+
+			-B.online leraning
+				- In this data is trained incrementally by feeding data instances sequentially 
+				- It is great for where data is continusoly feded or receives like stock markets and all and have limited compute power
+				- It can be used where huge data that can't be saved on memory of machine's (this is called out-of-core learning [ps: out of core is done offline it just that it uses online method])
+				- One imp parameter is how fast it adapts this is called `learning rate`
+				- Challeges like if leraning rate is too fast it will tend to forget old too slow then intertia of data is stagent also if bad patch of data comes it will drop the quality and malfunction 
+
+
+	- ##### Instance-Based Versus Model-Based Learning
+
+			- Based on how they generlize(predicts in simpler terms) there is Categorization of it.
+
+			-A.Instance-based learning
+				- Most trivial , match and flag not the best but not the worst 
+				- It learns by the example given so there might cases it falsely do the job
+			
+			-B.Model-based learning
+				- Another way is Build the model based on the example and then predict 
+				- Here the cost function is for how bad it predicts 
+
+-  #### Challenges of Machine Learning
+		- Following are challeges or ML
+
+	- ##### Insufficient Quantity of Training Data
+
+	- ##### Nonrepresentative Training Data
+
+	- ##### Poor-Quality Data
+
+	- ##### Irrelevant Features
+
+			- Here the feature engineering comes in picture as feature selection , extraction needed to happen.
+	
+	- ##### Overfitting the Training Data
+			
+			- Overfitting happens when the model is too complex relative to the amount and noisiness of the training data
+			- Solution is Reduce Noise , Simplyfy , Gather more to train
+			- Constraining a model to make it simpler and reduce the risk of overfitting is called `regularization`.
+			-The amount of regularization to apply during learning can be controlled by a `hyper‐parameter`. A hyperparameter is a parameter of a learning algorithm (not of the model).
+	
+	- ##### Underfitting the Training Data
+
+			- It occurs when your model is too simple to learn the underlying structure of the data.
+			- Solution is More powerful model , better feature modeling and algo's , reduce the constraints(regularization , hyper-parameters)
+			
+
+-  #### Testing and Validating
+
+		- The most important thing is to Now evaluate what you have build the model and all for that 
+		- Common is using 20% data as for test and 80% for actually works but is depends on the volume of the data 
+	
+	- ##### Hyperparameter Tuning and Model Selection
+
+			- Check the generalisation error and based on that select the appropriate model 
+	
+	- ##### Data Mismatch
+
+			-  large of amount data but not we needed in the prod 
+
+
+
+
+
+
+### Chapter 2
