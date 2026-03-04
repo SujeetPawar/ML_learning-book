@@ -75,3 +75,21 @@ python -m ipykernel install --user --name ml-learning-book --display-name "Pytho
 
 ### Chapter 1
 - Notes:
+1.Types of Machine Learning -> supervised learning , unsupervised learning , semi-supervised , online vs batch etc. 
+
+ - Supervised/Unsupervised Learning
+    1.It is based on the supervisions they get during training four major categories 
+        A.supervised
+            training set is provided with the desired outcome called `labels`
+            typical example would be classification (spam or not spam)
+            another example would be prediction of numeric values these are called predictors this sort of task is called `regression`
+            Note regression can be used as classification vice-versa.
+            Algorithms: k-Nearest Neighbors , Linear Regression, Logistic Regression , Support Vector Machines (SVMs), Decision Trees and Random Forests , Neural networks 
+        B.unsupervised
+            traning set is not provided that is it is unlabeled the system lerns without teacher like us 😮‍💨
+            Algorithms : k-means , DBSCAN , HCA , one-class SVM , Ioslation Forest , PCA, Kernal PCA , Locally Linear Embedding (LLE) , t-Distributed Stochastic Neighbor Embedding (t-SNE), Apriori , Eclat
+            typical example would be to detect similar type of user in your website , visualization algos 
+            A dimensity reduction algorithm which is more important here as it is necessary step also unsupervised 
+        C.semi-supervised
+        D.Reinforcement 
+        
