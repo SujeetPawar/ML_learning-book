@@ -183,3 +183,147 @@ python -m ipykernel install --user --name ml-learning-book --display-name "Pytho
 
 
 ### Chapter 2
+
+- #### Notes:
+		There are lots of opensource datasets providers follwoing is the list of them 
+			- UC Irvine Machine Learning Repository(https://archive.ics.uci.edu/)
+			- Kaggle datasets(https://www.kaggle.com/datasets)
+			- Amazon’s AWS datasets(https://registry.opendata.aws/)
+			- Data Portals(https://dataportals.org/)
+			- OpenDataMonitor(https://opendatamonitor.eu/frontend/web/index.php?r=dashboard%2Findex)
+			- Quandl(http://quandl.com/)
+			- Wikipedia’s list of Machine Learning datasets(https://en.wikipedia.org/wiki/List_of_datasets_for_machine-learning_research)
+			- The datasets subreddit (https://www.reddit.com/r/datasets/)
+
+-  #### Pipeline
+			- A sequence of data processing components is called a data pipeline. Pipelines are verycommon in Machine Learning systems, since there is a lot of data to manipulate and many data transformations to apply
+			- Components typically run asynchronously. Each component pulls in a large amountof data, processes it, and spits out the result in another data store. Then, some timelater, the next component in the pipeline pulls this data and spits out its own output.Each component is fairly self-contained: the interface between components is simplythe data store. This makes the system simple to grasp (with the help of a data flowgraph), and different teams can focus on different components. Moreover, if a com‐ponent breaks down, the downstream components can often continue to run nor‐mally (at least for a while) by just using the last output from the broken component.This makes the architecture quite robust
+
+-  #### Statistics definitions and formula needed
+			- Mean : Average value of all samples
+				- Formula `Mean = (x1 + x2 + x3 + ... + xn) / n`
+				- Explanation Mean tells the center of the data
+				- Used to understand average trend and sometimes to fill missing values
+			- Median : Middle value after sorting the data if its even average of middle 2 values 
+				- Formula `Median = middle value after sorting`
+				- Explanation If data has extreme outliers then median is more stable than mean
+				- Used in skewed data and missing value handling
+			- Mode : Most frequently occurring value
+				- Formula `Mode = value with highest frequency`
+				- Explanation It shows the most common category or repeated number
+				- Used mainly for categorical data
+			- Range : Difference between maximum and minimum value
+				- Formula `Range = Max - Min`
+				- Explanation It gives the total spread of data
+				- Used for quick understanding of variability
+			- Variance : Average squared distance from the mean
+				- Formula `Variance = Σ(xi - Mean)^2 / n`
+				- Explanation Larger variance means the data points are more spread out
+				- Used to measure data spread and for feature analysis
+			- Standard Deviation : Square root of variance
+				- Formula `Std = sqrt(Variance)`
+				- Explanation It shows spread in the same unit as the original feature
+				- Used in scaling and understanding dispersion
+			- Covariance : Measures how two variables change together
+				- Formula `Cov(X,Y) = Σ[(Xi - Mean(X))(Yi - Mean(Y))] / n`
+				- Explanation Positive covariance means both move together and negative means they move in opposite direction
+				- Used to study relationship between features
+			- Correlation : Standardized measure of relationship between two variables
+				- Formula `Corr(X,Y) = Cov(X,Y) / (Std(X) * Std(Y))`
+				- Explanation Its value lies between `-1` and `1`
+				- Used to find strength of linear relation and feature dependency
+			- Percentile : Value below which a given percentage of observations fall
+				- Formula `Pth percentile = value below which P percent data lies`
+				- Explanation Example 90th percentile means 90 percent of values are below it
+				- Used in outlier detection and understanding distribution
+			- Quartiles : Values that divide data into four equal parts
+				- Formula `Q1 = 25th percentile, Q2 = 50th percentile, Q3 = 75th percentile`
+				- Explanation `Q2` is the median
+				- Used to summarize spread and detect outliers
+			- Interquartile Range (IQR) : Spread of the middle 50 percent data
+				- Formula `IQR = Q3 - Q1`
+				- Explanation It is less affected by outliers
+				- Used for robust outlier detection
+			- Z Score : Number of standard deviations a value is from the mean
+				- Formula `Z = (x - Mean) / Std`
+				- Explanation Positive z score means above mean and negative means below mean
+				- Used in standardization and outlier detection
+			- Skewness : Measure of asymmetry of data distribution
+				- Formula `Skewness = E[(X - Mean)^3] / Std^3`
+				- Explanation Positive skew means tail on the right and negative skew means tail on the left
+				- Used to understand data distribution shape
+			- Kurtosis : Measure of heaviness of tails of a distribution
+				- Formula `Kurtosis = E[(X - Mean)^4] / Std^4`
+				- Explanation Higher kurtosis means more extreme values in tails
+				- Used to study outliers and distribution behavior
+			- Probability : Chance of an event happening
+				- Formula `P(A) = Number of favorable outcomes / Total outcomes`
+				- Explanation Probability value lies between `0` and `1`
+				- Used in prediction, uncertainty, and probabilistic models
+			- Probability Distribution : Describes how values are distributed with probabilities
+				- Formula `Discrete: P(X = x)` and `Continuous: f(x)`
+				- Explanation It tells which values are more likely to occur
+				- Used in model assumptions and statistical learning
+			- Normal Distribution : Bell shaped symmetric distribution around the mean
+				- Formula `f(x) = (1 / (Std * sqrt(2pi))) * e^(-((x - Mean)^2 / (2Std^2)))`
+				- Explanation Mean median and mode are equal in normal distribution
+				- Used in many ML assumptions and preprocessing methods
+			- Standardization : Transform data to zero mean and unit variance
+				- Formula `x_new = (x - Mean) / Std`
+				- Explanation After standardization features become comparable in scale
+				- Used before many ML algorithms like linear regression logistic regression and SVM
+			- Normalization : Scale values to a fixed range usually `0` to `1`
+				- Formula `x_new = (x - Min) / (Max - Min)`
+				- Explanation It compresses all values into the same range
+				- Used in neural networks and distance based algorithms
+			- Outlier : A data point that is far from most other points
+				- Formula `Outlier by IQR rule if x < Q1 - 1.5 * IQR or x > Q3 + 1.5 * IQR`
+				- Explanation Outliers can strongly affect mean variance and model performance
+				- Used in data cleaning and preprocessing
+			- Sampling : Selecting a subset from the whole population
+				- Formula `Sample ⊂ Population`
+				- Explanation We often train ML models on sample data instead of full population
+				- Used in train test split and dataset creation
+			- Population : Complete set of all possible observations
+				- Formula `Population = all observations`
+				- Explanation It is the full data we want to understand
+				- Used as the original source from which samples are drawn
+			- Sample : A smaller subset taken from the population
+				- Formula `Sample = selected observations from population`
+				- Explanation Statistics are usually calculated on samples
+				- Used for training analysis and estimation
+			- Central Limit Theorem : Distribution of sample means becomes approximately normal for large sample size
+				- Formula `If n is large then sample mean approx follows Normal distribution`
+				- Explanation This is important even when original data is not perfectly normal
+				- Used in inference confidence intervals and many statistical methods
+
+-  #### Steps for starting ML model 
+			- Select a Performance Measure(RSME , MAE)
+			- Check the Assumptions
+			- Get the Data
+			- Create a Test Set
+			- Discover and Visualize the Data to Gain Insights
+			- Visualizing Geographical Data(OPTIONAL : if not geographical data is present)
+			- Looking for Correlations
+			- Experimenting with Attribute Combinations
+			- Prepare the Data for Machine Learning Algorithms
+			- Data Cleaning
+			- Handling Text and Categorical Attributes
+			- Feature Scaling
+			- Transformation Pipelines
+			- Select and Train a Model
+			- Training and Evaluating on the Training Set
+			- Analyze the Best Models and Their Errors
+			- Evaluate Your System on the Test Set
+			- Launch, Monitor, and Maintain Your System
+
+-  #### Functions in ipynb notebook
+			- here only chaper_1_2.ipynb to consider checkout that i have added comments to describe it.
+
+-  #### Definitions and concepts 
+			- `Stratified` sampling is a sampling technique in which the population is divided into `distinct subgroups` (called `strata`) based on specific characteristics, and samples are drawn from each group in the same proportion as they exist in the overall population.
+			- `One-Hot Encoding` transforms a categorical feature with N unique categories into N new binary features, where each feature represents one category and contains 1 if the observation belongs to that category, otherwise 0.
+			- Min-max scaling (many people call this normalization) is the simplest: values are shifted and rescaled so that they end up ranging from 0 to 1. We do this by subtractingthe min value and dividing by the max minus the min. Scikit-Learn provides a transformer called MinMaxScaler for this
+			- Standardization is different: first it subtracts the mean value (so standardized valuesalways have a zero mean), and then it divides by the standard deviation so that the resulting distribution has unit variance. Unlike min-max scaling, standardization does not bound values to a specific range, which may be a problem for some algorithms (e.g., neural networks often expect an input value ranging from 0 to 1). However, standardization is much less affected by outliers
+			- As with all the transformations, it is important to fit the scalers tothe training data only, not to the full dataset (including the test set).Only then can you use them to transform the training set and the test set (and new data).
+			-

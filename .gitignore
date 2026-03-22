@@ -32,3 +32,8 @@ htmlcov/
 # OS files
 .DS_Store
 Thumbs.db
+
+
+/home/sujeet/Downloads/ML_learning-book/
+*.tgz
+*.csv
