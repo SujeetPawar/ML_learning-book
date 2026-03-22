@@ -326,4 +326,14 @@ python -m ipykernel install --user --name ml-learning-book --display-name "Pytho
 			- Min-max scaling (many people call this normalization) is the simplest: values are shifted and rescaled so that they end up ranging from 0 to 1. We do this by subtractingthe min value and dividing by the max minus the min. Scikit-Learn provides a transformer called MinMaxScaler for this
 			- Standardization is different: first it subtracts the mean value (so standardized valuesalways have a zero mean), and then it divides by the standard deviation so that the resulting distribution has unit variance. Unlike min-max scaling, standardization does not bound values to a specific range, which may be a problem for some algorithms (e.g., neural networks often expect an input value ranging from 0 to 1). However, standardization is much less affected by outliers
 			- As with all the transformations, it is important to fit the scalers tothe training data only, not to the full dataset (including the test set).Only then can you use them to transform the training set and the test set (and new data).
-			-
+			
+### Chapter 3
+
+- #### Notes:
+		
+
+
+-  #### Functions in ipynb notebook
+			- here only chaper_1_3.ipynb to consider checkout that i have added comments to describe it.
+
+-  #### Definitions and concepts 
